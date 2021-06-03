@@ -8,10 +8,9 @@
 
 
 >```
-> Bool_t AliAODTrack::HitsMuonChamber(Int_t MuonChamber, Int_t cathode) const
->```
-
->```
+> Bool_t AliAODTrack::HitsMuonChamber(Int_t MuonChamber, Int_t cathode) const {...;}
+>
+>
 >UInt_t GetMUONClusterMap() const { return (fITSMuonClusterMap& 0x3ff0000)>>16; }
 >```
 
