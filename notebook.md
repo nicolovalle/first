@@ -2,7 +2,7 @@
 
 
 
-**Use the AliPhysics converter (`AliPhysics/RUN3/AliAnalysisTaskAO2Dconverter.*`) to save a MuonClusterMap into the AO2Ds** 
+**Use the AliPhysics converter (`AliPhysics/RUN3/AliAnalysisTaskAO2Dconverter.*`) to save a muon chamber map into the AO2Ds** 
 
  From `AliAODTrack`:
 
