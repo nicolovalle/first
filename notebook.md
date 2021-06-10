@@ -2,7 +2,7 @@
 
 
 
-**Use the AliPhysics converter (`AliPhysics/RUN3/AliAnalysisTaskAO2Dconverter.*`) to save a muon chamber map into the AO2Ds** 
+:v: **Use the AliPhysics converter (`AliPhysics/RUN3/AliAnalysisTaskAO2Dconverter.*`) to save a muon chamber map into the AO2Ds** 
 
  From `AliAODTrack`:
 
@@ -63,7 +63,7 @@ Adding a Branch to the FwdTrack Tree:
 >    convertedTrack.fMCHBitMap = MUONTrack.GetMuonClusterMap(); // <------------
 >```
 >
-Is there a way to check if `GetMUONClusterMap()` returns exactly the esame number? 
+:x: Is there a way to check if `GetMUONClusterMap()` returns exactly the esame number? 
 
 >`AliAnalysisTaskAO2Dconverter::MUONtoFwdTrack(AliESDMuonTrack &MUONTrack) {`
 
