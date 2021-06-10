@@ -46,9 +46,21 @@ Adding a Branch to the FwdTrack Tree:
 >    tFwdTrack->Branch("fMatchScoreMCHMFT", &fwdtracks.fMatchScoreMCHMFT, "fMatchScoreMCHMFT/F");
 >    tFwdTrack->Branch("fMatchMFTTrackID", &fwdtracks.fMatchMFTTrackID, "fMatchMFTTrackID/I");
 >    tFwdTrack->Branch("fMatchMCHTrackID", &fwdtracks.fMatchMCHTrackID, "fMatchMCHTrackID/I");
->    tFwdTrack->Branch("fMCHBitMap", &fwdtracks.fMCHBitMap, "fMCHBitMap/I"); // <--------
+>    tFwdTrack->Branch("fMCHBitMap", &fwdtracks.fMCHBitMap, "fMCHBitMap/s"); // <--------
 >    tFwdTrack->SetBasketSize("*", fBasketSizeEvents);
 >  }
+>```
+>
+>`fMCHBitMap` is defined as:
+>```
+>  Int_t fMatchMFTTrackID = -1;
+>  Int_t fMatchMCHTrackID = -1;
+>  UShort_t fMCHBitMap = 0u; // <--------
+>```
+>And computed in `AliAnalysisTaskAO2Dconverter::MUONtoFwdTrack(AliESDMuonTrack &MUONTrack)`:
+>```
+>   convertedTrack.fPDca = AliMathBase::TruncateFloatFraction(pdca, mMuonTrCov);
+>    convertedTrack.fMCHBitMap = MUONTrack.GetMuonClusterMap(); // <------------
 >```
 >
 Is there any difference: ?
