@@ -63,7 +63,7 @@ Adding a Branch to the FwdTrack Tree:
 >    convertedTrack.fMCHBitMap = MUONTrack.GetMuonClusterMap(); // <------------
 >```
 >
-Is there any difference: ?
+Is there a way to check if `GetMUONClusterMap()` returns exactly the esame number? 
 
 >`AliAnalysisTaskAO2Dconverter::MUONtoFwdTrack(AliESDMuonTrack &MUONTrack) {`
 
