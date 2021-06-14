@@ -93,8 +93,7 @@ Adding a Branch to the FwdTrack Tree:
 
 >`DECLARE_SOA_TABLE(ReducedMuonsExtra, "AOD", "RTMUONEXTRA", //!`
 >`... ,`
->`fwdtrack::MCHBitMap);
----
+>`fwdtrack::MCHBitMap); <----`
 
 
 
