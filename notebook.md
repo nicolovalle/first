@@ -87,7 +87,13 @@ Adding a Branch to the FwdTrack Tree:
 >
 >`..., fwdtrack::MCHBitMap);`
 
+**Add column in `ReducedMuonExtra` table in `/home/nvalle3/alice/O2/Analysis/DataModel/include/AnalysisDataModel/ReducedInfoTables.h`**
 
+:v:
+
+>`DECLARE_SOA_TABLE(ReducedMuonsExtra, "AOD", "RTMUONEXTRA", //!`
+>`... ,`
+>`fwdtrack::MCHBitMap);
 ---
 
 
