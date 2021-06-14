@@ -74,11 +74,14 @@ Adding a Branch to the FwdTrack Tree:
 
 **Add column and expand `StoredFwdTracks` table in `AnalysisDataModel.h`**
 
-Under the namespace `fwdtrack`: (it will be a static column, read from the AO2D)
+:v: Under the namespace `fwdtrack`: (it will be a static column, read from the AO2D)
 
->`DECLARE_SOA_COLUMN(MCHBitMap, MchBitMap, uint16_t);`
+>`DECLARE_SOA_COLUMN(Rho1PtPhi, rho1PtPhi, int8_t); //!`
+>`DECLARE_SOA_COLUMN(Rho1PtTgl, rho1PtTgl, int8_t); //!`
+>`DECLARE_SOA_COLUMN(MCHBitMap, MchBitMap, short);  <------- `
 
-Under the namespace aod:
+
+:v: Under the namespace aod:
 
 >`DECLARE_SOA_TABLE_FULL(StoredFwdTracks,...`
 >
