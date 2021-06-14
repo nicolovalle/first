@@ -72,7 +72,7 @@ Adding a Branch to the FwdTrack Tree:
 
 ---
 
-**Add column and expand `StoredFwdTracks` table in `AnalysisDataModel.h`**
+**Add column and expand `StoredFwdTracks` table in `O2/Framework/Core/include/Framework/AnalysisDataModel.h`**
 
 :v: Under the namespace `fwdtrack`: (it will be a static column, read from the AO2D)
 
