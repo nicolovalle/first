@@ -75,9 +75,10 @@ Adding a Branch to the FwdTrack Tree:
 **Add column and expand `StoredFwdTracks` table in `O2/Framework/Core/include/Framework/AnalysisDataModel.h`**
 
 :v: Under the namespace `fwdtrack`: (it will be a static column, read from the AO2D)
-
->`DECLARE_SOA_COLUMN(MatchMCHTrackID, matchMCHTrackID, int);     //! ID of matching MCH track for GlobalMuonTracks  (ints while self indexing not available)`
->`DECLARE_SOA_COLUMN(MCHBitMap, MchBitMap, short); <-------------`
+>```
+>DECLARE_SOA_COLUMN(MatchMCHTrackID, matchMCHTrackID, int);     //! ID of matching MCH track for GlobalMuonTracks  (ints while self indexing not available)
+>DECLARE_SOA_COLUMN(MCHBitMap, MchBitMap, short); <-------------
+>```
 
 
 :v: Under the namespace aod:
