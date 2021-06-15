@@ -1,3 +1,4 @@
+
 #   Muon chambers bitmap
 
 
@@ -87,7 +88,7 @@ Adding a Branch to the FwdTrack Tree:
 >
 >`..., fwdtrack::MCHBitMap);`
 
-**Add column in `ReducedMuonExtra` table in `O2/Analysis/DataModel/include/AnalysisDataModel/ReducedInfoTables.h`**
+:v: **Add column in `ReducedMuonExtra` table in `O2/Analysis/DataModel/include/AnalysisDataModel/ReducedInfoTables.h`**
 
 >```
 >DECLARE_SOA_TABLE(ReducedMuonsExtra, "AOD", "RTMUONEXTRA", //!
@@ -95,7 +96,17 @@ Adding a Branch to the FwdTrack Tree:
 >fwdtrack::MCHBitMap); <----
 >```
 
-:x: Probably this has to be done together with the modification in the tableMaker?
+Probably this has to be done together with the modification in the tableMaker? It seemed so.
+
+:v: **Use tableMaker to produce skimmed tables defined before**
+
+Both in `O2/Analysis/Tasks/PWGDQ/tableMaker.cxx` and `.../tableMakerMuon_pp.cxx`,
+
+>```
+> muonExtended(muon.nClusters(), muon.pDca(), muon.rAtAbsorberEnd(),
+>                   muon.chi2(), muon.chi2MatchMCHMID(), muon.chi2MatchMCHMFT(),
+>                  muon.matchScoreMCHMFT(), muon.matchMFTTrackID(), muon.matchMCHTrackID(), muon.MchBitMap()); //nicolo
+>```
 
 
 
