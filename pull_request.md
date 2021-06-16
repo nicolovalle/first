@@ -14,5 +14,5 @@ git config user.github "nicolovalle"
 ```
 git checkout -b mchbitmap
 ```
-5. Modified the code
+5. Modify the code
 6. 
