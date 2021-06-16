@@ -14,5 +14,14 @@ git config user.github "nicolovalle"
 ```
 git checkout -b mchbitmap
 ```
-5. Modify the code
-6. 
+5. Pull: `git push --set-upstream origin mchbitmap`
+6. Modify the code
+7. Add the changes:
+```
+git add Framework/Core/include/Framework/AnalysisDataModel.h Analysis/DataModel/include/AnalysisDataModel/ReducedInfoTables.h Analysis/Tasks/PWGDQ/tableMaker*
+```
+8. Commit:
+```
+git commit -m "Muon chambers bitmap"
+```
+9. Push: `git push`
