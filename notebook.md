@@ -1,7 +1,9 @@
 
 #   Muon chambers bitmap
 
+[Link AliPhysics pull request](https://github.com/alisw/AliPhysics/pull/17940)
 
+[Link O2 pull request](https://github.com/AliceO2Group/AliceO2/pull/6440)
 
 :v: **Use the AliPhysics converter (`AliPhysics/RUN3/AliAnalysisTaskAO2Dconverter.*`) to save a muon chamber map into the AO2Ds** 
 
@@ -108,6 +110,7 @@ Both in `O2/Analysis/Tasks/PWGDQ/tableMaker.cxx` and `.../tableMakerMuon_pp.cxx`
 >                  muon.matchScoreMCHMFT(), muon.matchMFTTrackID(), muon.matchMCHTrackID(), muon.MchBitMap()); //nicolo
 >```
 
+# Save the information in the VarManager and HistogramManager
 
 
 
