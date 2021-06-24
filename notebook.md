@@ -111,32 +111,35 @@ Both in `O2/Analysis/Tasks/PWGDQ/tableMaker.cxx` and `.../tableMakerMuon_pp.cxx`
 >```
 
 # Save the information in the VarManager and HistogramManager
+:v: Add variable in VarManager (:x: still not pull requested... to do?)
 
-
-
-# Expand the cluster table with a chamber index
-
-This is to know the clusters attached to the tracks on each chamber
-
-
+In `O2/Analysis/PWGDQ/include/PWGDQCore/VarManager.h`:
+>```
+> // Muon track variables
+>    kMuonNClusters,
+>    kMuonBitMap, //nicolo  <-----
+>    kMuonPDca,
+>```
 
 >```
->namespace muoncluster
->{
->DECLARE_SOA_INDEX_COLUMN_FULL(Track, track, int, Muons, ""); //! points to a >muon track in the Muon table
->DECLARE_SOA_COLUMN(X, x, float);                             //!
->DECLARE_SOA_COLUMN(Y, y, float);                             //!
->DECLARE_SOA_COLUMN(Z, z, float);                             //!
->DECLARE_SOA_COLUMN(ErrX, errX, float);                       //!
->DECLARE_SOA_COLUMN(ErrY, errY, float);                       //!
->DECLARE_SOA_COLUMN(Charge, charge, float);                   //!
->DECLARE_SOA_COLUMN(Chi2, chi2, float);                       //!
->} // namespace muoncluster
->
->DECLARE_SOA_TABLE(MuonClusters, "AOD", "MUONCLUSTER", //!
->                  muoncluster::TrackId,
->                  muoncluster::X, muoncluster::Y, muoncluster::Z,
->                  muoncluster::ErrX, muoncluster::ErrY,
->                  muoncluster::Charge, muoncluster::Chi2);
->
+>// Quantities based on the muon extra table
+> if constexpr ((fillMap & ReducedMuonExtra) > 0 || (fillMap & Muon) > 0) {
+>    values[kMuonNClusters] = track.nClusters();
+>    values[kMuonBitMap] = track.MchBitMap(); //nicolo <-------------
 >```
+In `O2/Analysis/PWGDQ/src/VarManager.cxx`:
+>```
+>  fgVariableNames[kMuonNClusters] = "muon n-clusters";
+>  fgVariableUnits[kMuonNClusters] = "";
+>  fgVariableNames[kMuonBitMap] = "muon tracking chambers bitmap"; //nicolo <-----------
+>  fgVariableUnits[kMuonBitMap] = ""; //nicolo <-----------
+>```
+Finally, in  `O2/Analysis/PWGDQ/include/PWGDQCore/HistogramsLibrary.h`:
+>```
+>  if (subGroupStr.Contains("muon")) {
+>      hm->AddHistogram(histClass, "MuonNClusters", "", false, 100, 0.0, 10.0, VarManager::kMuonNClusters);
+>     hm->AddHistogram(histClass, "MuonChambersBitMap", "", false, 1025, 0.0, 1025.0, VarManager::kMuonBitMap); //nicolo <----------
+>```
+
+
+
