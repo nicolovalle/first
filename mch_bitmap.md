@@ -111,7 +111,8 @@ Both in `O2/Analysis/Tasks/PWGDQ/tableMaker.cxx` and `.../tableMakerMuon_pp.cxx`
 >```
 
 # Save the information in the VarManager and HistogramManager
-:v: Add variable in VarManager (:x: still not pull requested... to do?)
+
+:v: **Add variable in VarManager** (:x: still not pull requested... to do?)
 
 In `O2/Analysis/PWGDQ/include/PWGDQCore/VarManager.h`:
 >```
@@ -134,7 +135,10 @@ In `O2/Analysis/PWGDQ/src/VarManager.cxx`:
 >  fgVariableNames[kMuonBitMap] = "muon tracking chambers bitmap"; //nicolo <-----------
 >  fgVariableUnits[kMuonBitMap] = ""; //nicolo <-----------
 >```
-Finally, in  `O2/Analysis/PWGDQ/include/PWGDQCore/HistogramsLibrary.h`:
+
+:v: **Add histogram**
+
+In  `O2/Analysis/PWGDQ/include/PWGDQCore/HistogramsLibrary.h`:
 >```
 >  if (subGroupStr.Contains("muon")) {
 >      hm->AddHistogram(histClass, "MuonNClusters", "", false, 100, 0.0, 10.0, VarManager::kMuonNClusters);
